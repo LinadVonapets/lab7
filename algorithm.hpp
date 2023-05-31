@@ -14,5 +14,5 @@ void add_car(Car*& cars, size_t& size, size_t& arr_size);
 void print_info(const Car* cars, const size_t size);
 void find_mark(Car* cars, const size_t size);
 void find_owner(Car* cars, const size_t size);
-
+//привет
 #endif
