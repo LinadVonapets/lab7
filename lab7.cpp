@@ -28,25 +28,29 @@ void run_db()
     {
         switch(handle_event())
         {
+        case ADD:
+            add_car(arr, actual_size, arr_size);
+            break;
+
         case PRINT:
             print_info(arr, actual_size);
             break;
+
         case FIND_MARK:
             find_mark(arr, actual_size);
             break;
 
-        case FIND_OWNER:
-            find_owner(arr, actual_size);
+        case FILTER_OWNER_BY_MILEAGE:
+            filter_owner_by_mileage(arr, actual_size);
             break;
 
-        case ADD:
-            add_car(arr, actual_size, arr_size);
+        case FILTER_CAR_BY_TO_DATE:
+            filter_car_by_to_date(arr, actual_size);        
             break;
-            
+
         case QUIT:
             quit = true;
             break;
-
         }
     }
     free_car_array(arr, arr_size);

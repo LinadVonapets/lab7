@@ -110,7 +110,7 @@ void find_mark(Car* cars, const size_t size)
 
 
 
-void find_owner(Car* cars, const size_t size)
+void filter_owner_by_mileage(Car* cars, const size_t size)
 {   
     Car* founded = new Car[size];
     size_t found_size = 0;
@@ -137,4 +137,22 @@ void find_owner(Car* cars, const size_t size)
 
     print_info(founded, found_size);
     free_car_array(founded, size);
+}
+
+
+
+void filter_car_by_to_date(Car* cars, const size_t size)
+{
+    Car* founded = new Car[size];
+    size_t found_size = 0;
+
+    for(size_t i = 0; i < size; i++)
+    {
+        int abs_month = diff_crnt_date(&cars[i].date);
+        if(abs_month > 18)
+            carcpy(&founded[found_size++], &cars[i]);
+    }
+
+    print_info(founded, found_size);
+    free_car_array(founded, size); 
 }

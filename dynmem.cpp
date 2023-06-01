@@ -70,7 +70,7 @@ void free_car(Car* object)
 
 
 
-// Освобождение бедолга :( 
+// Освобождение бедолаг фром ГУЛАГ :( 
 void free_car_array(Car* object, size_t size)
 {
     for(size_t i = 0; i < size; i++)

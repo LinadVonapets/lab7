@@ -31,8 +31,8 @@ enum state_t
     ADD,
     PRINT, 
     FIND_MARK,
-    FIND_OWNER,
-    FIND_CAR,
+    FILTER_OWNER_BY_MILEAGE,
+    FILTER_CAR_BY_TO_DATE,
     QUIT,
     MAX_AMOUNT_CMD
 };
