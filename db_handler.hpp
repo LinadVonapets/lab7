@@ -6,6 +6,7 @@
 #include "algorithm.hpp"
 
 bool is_exist();
-void read_from_file(Car*& cars, size_t& size, size_t& arr_size);
+void read_from_file(Car*& arr, size_t& size, size_t& arr_size);
+void save_to_file(const Car* arr, size_t& size);
 
 #endif

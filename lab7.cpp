@@ -21,7 +21,8 @@ void run_db()
     printf("2 - Search for car by mark\n");
     printf("3 - Find owner, which have mileage greater than N\n");
     printf("4 - Find car with TO date greater then 18 month\n");
-    printf("5 - Exit and save\n");
+    printf("5 - Save\n");
+    printf("6 - Exit\n");
     
     bool quit = false;
     while(!quit)
@@ -50,6 +51,10 @@ void run_db()
 
         case QUIT:
             quit = true;
+            break;
+
+        case SAVE:
+            save_to_file(arr, actual_size);
             break;
         }
     }

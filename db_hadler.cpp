@@ -10,6 +10,7 @@ bool is_exist()
 
 void read_from_file(Car*& cars, size_t& size, size_t& arr_size)
 {
+    printf("Reading from file...\n");
     if(!is_exist())
         printf("<WARN: database file doesn't exist!\n>");
     else
@@ -38,7 +39,28 @@ void read_from_file(Car*& cars, size_t& size, size_t& arr_size)
         }
         
         fclose(fp);
+        printf("Reading is done!\n");
     }
+
 }
 
 
+void save_to_file(const Car* arr, size_t& size)
+{
+    printf("Saving...\n");
+    if(!is_exist())
+        printf("<WARN: Creating new save file!\n>");
+    
+    FILE* fp = fopen("db_saved.txt", "w");
+    
+    
+    for(size_t i = 0; i < size; i++)
+    {
+        fprintf(fp, "%s %s %s %d %d %d %s %d\n", arr[i].mark,     arr[i].fio.name,   arr[i].fio.surname,
+                                               arr[i].power,    arr[i].mileage, 
+                                               arr[i].date.day, arr[i].date.month, arr[i].date.year);
+    }
+        
+    fclose(fp);
+    printf("Saved\n");
+}

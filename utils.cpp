@@ -16,7 +16,7 @@ state_t handle_event()
         scanf("%d", &cmd);
         if(cmd >= 0 && cmd < MAX_AMOUNT_CMD)
             return (state_t)cmd;        
-        printf("Invalid command.");
+        printf("Invalid command.\n");
     }
 }
 

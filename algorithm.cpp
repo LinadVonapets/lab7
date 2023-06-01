@@ -91,7 +91,7 @@ void print_info(const Car* cars, const size_t size)
 
 void find_mark(Car* cars, const size_t size)
 {  
-    Car* founded = new Car[size];
+    Car founded[size];
     size_t found_size = 0;
 
     char mark[255] = "";
@@ -104,15 +104,13 @@ void find_mark(Car* cars, const size_t size)
             carcpy(&founded[found_size++], &cars[i]);
 
     print_info(founded, found_size);
-    free_car_array(founded, size);
-
 }
 
 
 
 void filter_owner_by_mileage(Car* cars, const size_t size)
 {   
-    Car* founded = new Car[size];
+    Car founded[size];
     size_t found_size = 0;
     int gt_mileage=0;
     printf("Enter milage: ");
@@ -136,14 +134,13 @@ void filter_owner_by_mileage(Car* cars, const size_t size)
             }
 
     print_info(founded, found_size);
-    free_car_array(founded, size);
 }
 
 
 
 void filter_car_by_to_date(Car* cars, const size_t size)
 {
-    Car* founded = new Car[size];
+    Car founded[size];
     size_t found_size = 0;
 
     for(size_t i = 0; i < size; i++)
@@ -153,6 +150,7 @@ void filter_car_by_to_date(Car* cars, const size_t size)
             carcpy(&founded[found_size++], &cars[i]);
     }
 
+    
+    
     print_info(founded, found_size);
-    free_car_array(founded, size); 
 }
